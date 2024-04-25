@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EstudioAnime.Models.Animadores>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Animadores</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EstiloAnimacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnosExperiencia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstiloAnimacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnosExperiencia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AnimadoresId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AnimadoresId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AnimadoresId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

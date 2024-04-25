@@ -1,0 +1,85 @@
+﻿@model IEnumerable<EstudioAnime.Models.Animes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Animes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeEp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataLancamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantidadeEp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataLancamento)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AnimesId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AnimesId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AnimesId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+   
+</table>
+<p>Aqui você terá acesso a informações sobre suas animações favoritas.</p>
+
+<ul>
+    <li style="display: flex; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px;">
+        <div style="margin-right: 10px; border-right: 1px solid #ccc; padding-right: 10px;">
+            <img src="https://rollingstone.uol.com.br/media/_versions/2023/12/netflix-anuncia-producao-de-remake-do-anime-de-one-piece-foto-divulgacao_widelg.jpg" alt="Foto One Piece" style="width: 150px; height: auto;">
+        </div>
+        <div>
+            <p><a href="https://onepiece.fandom.com/pt/wiki/Pagina_principal" style="text-decoration: none; color: inherit;"></a>Título: One Piece</p>
+            <p>Quantidade de Episódios: 1100</p>
+            <p>Data de Lançamento: 1999</p>
+        </div>
+    </li>
+
+    <li style="display: flex; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px;">
+        <div style="margin-right: 10px; border-right: 1px solid #ccc; padding-right: 10px;">
+            <img src="https://proxy.olhardigital.com.br/wp-content/uploads/2022/07/Dragon-Ball-Z.webp" alt="Foto Dragon Ball Z" style="width: 150px; height: auto;">
+        </div>
+        <div>
+            <p>Título: Dragon Ball Z</p>
+            <p>Quantidade de Episódios: 500</p>
+            <p>Data de Lançamento: 2000</p>
+        </div>
+    </li>
+
+    <li style="display: flex; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px;">
+        <div style="margin-right: 10px; border-right: 1px solid #ccc; padding-right: 10px;">
+            <img src="https://gizmostory.com/wp-content/uploads/2021/10/Anime-Mushoku-Tensei-Season-2-Episode-2-PhonesWiki.jpg" alt="Foto Mushoku Tensei" style="width: 150px; height: auto;">
+        </div>
+        <div>
+            <p>Título: Mushoku Tensei</p>
+            <p>Quantidade de Episódios: 50</p>
+            <p>Data de Lançamento: 2020</p>
+        </div>
+    </li>
+</ul>
